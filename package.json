@@ -1,0 +1,38 @@
+{
+  "name": "Library",
+  "version": "1.0.0",
+  "main": "src/client/app.js",
+  "scripts": {
+    "build": "webpack --progress --config config/webpack.js",
+    "watch": "webpack --watch --config config/webpack.js",
+    "debug": "webpack --debug --devtool inredline-source-map --watch --config config/webpack.js",
+    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --reporter spec --recursive ./test/*.js ./test/**/*.js"
+  },
+  "dependencies": {
+    "immutable": "^3.7.5",
+    "isomorphic-fetch": "^2.2.0",
+    "react": "^0.14.0",
+    "react-addons-test-utils": "^0.14.0",
+    "react-bootstrap": "^0.27.2",
+    "react-dom": "^0.14.0",
+    "react-notification-system": "^0.2.5",
+    "react-redux": "^4.0.0",
+    "react-router": "^1.0.0-rc3",
+    "redux": "^3.0.3",
+    "redux-logger": "^2.0.4",
+    "redux-thunk": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "babel-core": "^5.0.12",
+    "babel-loader": "^5.0.0",
+    "babel-runtime": "^5.4.7",
+    "body-parser": "^1.9.3",
+    "chai": "^3.3.0",
+    "chai-immutable": "^1.3.0",
+    "jsdom": "^7.0.1",
+    "mocha": "^2.3.3",
+    "nock": "^2.17.0",
+    "webpack": "^1.8.5"
+  }
+}

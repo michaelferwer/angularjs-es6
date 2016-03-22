@@ -1,0 +1,54 @@
+.book-cover {
+    max-height: 300px;
+}
+
+.purchase-item-cart{
+    max-width: 600px;
+    min-width: 400px;
+}
+
+.cover-item-cart {
+    max-height: 200px;
+    display: inline;
+}
+
+.title-item-cart{
+    display: inline;
+}
+
+.center-container {
+    margin: auto;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.small-icon{
+    max-height: 20px;
+    margin-right: 5px;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.clear{
+    clear: both;
+}
+
+.vertical-align-text{
+    vertical-align: middle;
+}
+
+.text-align-right{
+    text-align: right;
+}
+
+.align-text{
+    height: 35px;
+}
