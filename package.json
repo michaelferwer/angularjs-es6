@@ -6,21 +6,14 @@
     "build": "webpack --progress --config config/webpack.js",
     "watch": "webpack --watch --config config/webpack.js",
     "debug": "webpack --debug --devtool inredline-source-map --watch --config config/webpack.js",
-    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --reporter spec --recursive ./test/*.js ./test/**/*.js"
+    "test": "mocha --compilers js:babel-core/register --reporter spec --recursive ./test/*.js ./test/**/*.js"
   },
   "dependencies": {
+    "angular": "^1.5.6",
+    "angular-route": "^1.5.6",
+    "angular-ui-router": "^0.3.1",
     "immutable": "^3.7.5",
-    "isomorphic-fetch": "^2.2.0",
-    "react": "^0.14.0",
-    "react-addons-test-utils": "^0.14.0",
-    "react-bootstrap": "^0.27.2",
-    "react-dom": "^0.14.0",
-    "react-notification-system": "^0.2.5",
-    "react-redux": "^4.0.0",
-    "react-router": "^1.0.0-rc3",
-    "redux": "^3.0.3",
-    "redux-logger": "^2.0.4",
-    "redux-thunk": "^1.0.0"
+    "isomorphic-fetch": "^2.2.0"
   },
   "devDependencies": {
     "babel": "^5.8.23",
