@@ -1,5 +1,5 @@
 export default class CatalogController {
   constructor() {
-    this.name = 'Catalog';
+    this.name = 'Cart';
   }
 }

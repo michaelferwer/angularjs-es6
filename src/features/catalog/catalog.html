@@ -1,0 +1,21 @@
+<h1 class="center-text">Catalog</h1>
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4" ng-repeat="book in catalog.books">
+        <div class="img-thumbnail">
+            <img class="book-cover center-container responsive" ng-src="{{book.cover}}"  />
+            <h4 class="center-text">{{book.title}}</h4>
+            <div>ISBN : {{book.isbn}}</div>
+
+            <div>
+                <p class="left vertical-align-text align-text size-md">
+                    <b>price : </b>{{book.price}}&#8364;
+                </p>
+                <button ng-click="catalog.addBook(book)" class="btn btn-warning right" type="button">
+                    <img class="small-icon" ng-src="img/cart.png"/>
+                    Add to cart
+                </button>
+                <div class="clear"/>
+            </div>
+        </div>
+    </div>
+</div>
