@@ -11,10 +11,11 @@ export default class LocalStorageManager {
    *
    * @param store
    */
-  static loadCartIfPresent(store) {
+  static loadCartIfPresent() {
     if (window.localStorage.getItem(LOCAL_STORAGE_CART_KEY)){
-      store.dispatch(loadCartFromLocalStorage(JSON.parse(localStorage.getItem(LOCAL_STORAGE_CART_KEY))));
+      return JSON.parse(localStorage.getItem(LOCAL_STORAGE_CART_KEY));
     }
+    return {purchase: {}, offers: [], isFetch: false, isFetching: false};
   }
 
   /**
