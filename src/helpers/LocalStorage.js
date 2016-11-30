@@ -26,4 +26,9 @@ export default class LocalStorageManager {
   static saveCart(cart){
     window.localStorage.setItem(LOCAL_STORAGE_CART_KEY,JSON.stringify(cart));
   }
+
+
+  static getString(){
+    return 'toto';
+  }
 }

@@ -2,8 +2,7 @@ import angular from 'angular';
 import localStorageManager from '../../helpers/LocalStorage';
 
 class CartServices {
-  constructor($q, $http) {
-    this._$q = $q;
+  constructor($http) {
     this._$http = $http;
     this.data = localStorageManager.loadCartIfPresent();
     this.bestOffer = 0;
@@ -37,6 +36,7 @@ class CartServices {
   }
 
   computeBestOffer(){
+    localStorageManager.saveCart(this.data);
     var amount = 0;
     for(let index in this.data.purchase){
       let item = this.data.purchase[index];
@@ -75,9 +75,9 @@ class CartServices {
     // if there is no book in cart, no need to call webservice
     // just return a promise with empty array
     if(keys.length <= 0) {
-      let deferred = this._$q.defer();
-      deferred.resolve({offers: []});
-      return deferred.promise;
+      this.data.offers = [];
+      this.computeBestOffer();
+      return;
     }
 
     for(var index in keys){
@@ -86,13 +86,14 @@ class CartServices {
         books += ',';
       }
     }
-    let deferred = this._$q.defer();
     this._$http.get('http://henri-potier.xebia.fr/books/'+books+'/commercialOffers', {cache: true})
-      .success(data => {
-        deferred.resolve(data);
-      })
-      .error(err => deferred.reject('Error due to retrieve catalog'));
-    return deferred.promise;
+      .then(response => {
+        this.data.offers = response.data.offers;
+        this.computeBestOffer();
+      }, err => {
+        console.error('Error due to retrieve catalog', err);
+        this.data.offers = [];
+      });
   }
 }
 

@@ -10,6 +10,7 @@ module.exports = {
   stats: {
     colors: true,
     reasons: true
+
   },
   resolve: {
     root: path.resolve('./src'),
@@ -25,6 +26,10 @@ module.exports = {
       {
         test: /\.html$/,
         loader: "html"
+      },
+      {
+        test: /\.json$/,
+        loader: "json"
       }
     ]
   }

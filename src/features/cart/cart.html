@@ -1,7 +1,14 @@
 <h1 class="text-center">Cart</h1>
 <div class="row">
     <div class="col-md-6 col-sm-12">
-        <h3 class="text-center">Books</h3>
+        <h3 class="text-center">
+        <!--{{cart.nbBooks, plural,-->
+            <!--=0 {{{'views.cart.purchase.book.title' | translate}}}-->
+            <!--=1 {{{'views.cart.purchase.book.title' | translate}}}-->
+            <!--other {{{'views.cart.purchase.book.title' | translate}}}-->
+        <!--}}-->
+            {{ 'views.cart.purchase.book.title' | translate:"{ nbBook: " + cart.nbBooks + " }" }}
+        </h3>
         <div ng-repeat="item in cart.cart.purchase">
             <div class="panel panel-default purchase-item-cart">
                 <div class="panel-body">

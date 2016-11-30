@@ -12,18 +12,11 @@ export default class CatalogController {
                    }));
     // Fetch offers
     this.fetchOffersAndComputeBestOffer();
+    this.nbBooks = Object.keys(this.cart.purchase).length;
   }
 
   fetchOffersAndComputeBestOffer(){
-    var self = this;
-    this.cartServices.fetchOffers()
-      .then(data => {
-        self.cart.offers = data.offers;
-        self.cartServices.computeBestOffer();
-      })
-      .catch(err => {
-        console.log(err)
-      });
+    this.cartServices.fetchOffers();
   }
 
   changeQuantity(item){
@@ -33,6 +26,7 @@ export default class CatalogController {
 
   removeBook(item){
     this.cartServices.removeBook(item.book);
+    this.nbBooks = Object.keys(this.cart.purchase).length;
     this.fetchOffersAndComputeBestOffer();
   }
 }

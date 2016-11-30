@@ -13,4 +13,3 @@ npm run build
 5. Vous pouvez lancer les test unitaires à l'aide de la commande suivante :
 ```
 npm run test
-```

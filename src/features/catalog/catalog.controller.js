@@ -7,13 +7,13 @@ export default class CatalogController {
   }
 
   getBooks() {
-    var self = this;
     this.catalogServices.getBooks()
       .then(data => {
-        self.books = data;
+        this.books = data;
       })
       .catch(err => {
-        console.log(err)
+        console.log(err);
+        this.books = {};
       });
   }
 
